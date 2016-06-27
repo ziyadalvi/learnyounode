@@ -4,9 +4,10 @@ var fs = require('fs');
 var http = require('http');
 
 http.get(process.argv[2],function callback (response) {
+    response = response.setEncoding("utf8");
+    
     response.on("data", function(data) {
-        var string = data.setEncoding();
-        console.log(string);
+        console.log(data);
     })
 
 })
